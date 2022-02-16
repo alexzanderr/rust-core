@@ -1,4 +1,10 @@
 
+#![allow(
+    dead_code,
+    unused_imports,
+    unused_variables,
+    unused_macros
+)]
 
 
 extern crate fstrings;
