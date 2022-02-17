@@ -1,4 +1,3 @@
-
 #![allow(
     dead_code,
     unused_imports,
@@ -7,15 +6,11 @@
     unused_assignments
 )]
 
-
-
-
-extern crate fstrings;
 extern crate ansi_term;
-extern crate libc;
 extern crate console;
+extern crate fstrings;
+extern crate libc;
 // extern crate variadic;
-
 
 // to use aesthetics you need to
 // write mod aesthetics before
@@ -23,10 +18,10 @@ extern crate console;
 mod aesthetics;
 use aesthetics::*;
 
+use console::Term;
 use std::hash::Hash;
 use std::io::stdin;
 use std::time::Duration;
-use console::Term;
 
 // (tmux) [~/Alexzander__/programming/testing_vim] git:(master[-M?--U])
 
@@ -37,14 +32,11 @@ fn print<T: std::fmt::Display>(arg: T) {
 macro_rules! calc {
     ($argument:expr) => {
         println!("{}", $argument);
-    };
-    // ($argument:expr, $arguments:expr, +) => {
-    //     println!("{}", $argument);
-    //     calc!()
-    // };
+    }; // ($argument:expr, $arguments:expr, +) => {
+       //     println!("{}", $argument);
+       //     calc!()
+       // };
 }
-
-
 
 // fn print<T: std::fmt::Display>(argument: T, argument2: T) {
 //     println!("{} {}", argument, argument2);
@@ -57,9 +49,7 @@ macro_rules! calc {
 fn read_line() -> String {
     let mut _input = String::new();
 
-    stdin()
-        .read_line(&mut _input)
-        .expect("Failed to read line");
+    stdin().read_line(&mut _input).expect("Failed to read line");
 
     return _input;
 }
@@ -69,14 +59,12 @@ fn read_line_prompt(prompt_message: &str) -> String {
     return read_line();
 }
 
-
-extern "C" fn handle_interrupt(sig: libc::c_int) { // 1
+extern "C" fn handle_interrupt(sig: libc::c_int) {
+    // 1
     println!("Sorry we didn't get the chance to finish");
 }
 
-
 use std::thread;
-
 
 fn not_main() {
     let x = 123;
@@ -87,14 +75,11 @@ fn not_main() {
     // let result = read_line_prompt(" [~/Alexzander__/programming/rust/core] > ");
     // print(result);
 
-
-
     // All libc functions are unsafe
     unsafe {
         libc::signal(libc::SIGINT, handle_interrupt as libc::sighandler_t); // 2
     }
 }
-
 
 // fn something() {
 
@@ -121,8 +106,6 @@ fn not_main() {
 //     print(String::from("salutare my name isa ndrew"));
 
 // }
-
-
 
 extern crate termion;
 use std::io::{stdout, Write};
@@ -165,16 +148,14 @@ fn not12_main() {
 extern crate rand;
 
 use rand::Rng;
-use std::collections::HashMap;
 use std::cmp::Ordering;
+use std::collections::HashMap;
 
 fn read_number() -> u32 {
     let mut guess = String::new();
 
     println!("awaiting number read > ");
-    stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+    stdin().read_line(&mut guess).expect("Failed to read line");
 
     return guess.trim().parse().expect("Please type a number!");
 }
@@ -190,13 +171,9 @@ fn very_long_computation_function() {
     let mut _counter: HashMap<i8, i32> = HashMap::new();
     let mut _hashinside: HashMap<i8, HashMap<&str, f32>> = HashMap::new();
 
-
-
     let _size = 1000i32;
     for i in 1.._size {
-        let secret_number =
-            rand::thread_rng().gen_range(1..101);
-
+        let secret_number = rand::thread_rng().gen_range(1..101);
 
         // dict = {
         //     123: {
@@ -205,7 +182,8 @@ fn very_long_computation_function() {
         //     }
         // }
 
-        let modifier = _hashinside.entry(secret_number)
+        let modifier = _hashinside
+            .entry(secret_number)
             .or_insert(HashMap::from([("frequency", 0f32), ("probability", 0f32)]));
 
         *modifier.get_mut(&"frequency").unwrap() += 1f32;
@@ -215,7 +193,6 @@ fn very_long_computation_function() {
         *modifier.get_mut(&"probability").unwrap() =
             *modifier.get("frequency").unwrap() / _size as f32;
         // println!("{:?}", modifier.get_mut(&"frequency"));
-
 
         // match 50.cmp(&secret_number) {
         //     Ordering::Less => println!("Too small!"),
@@ -234,17 +211,14 @@ fn very_long_computation_function() {
         _vector.push(secret_number);
     }
 
-
     for (k, v) in _hashinside.iter() {
         println!("{}-{:?}", k, v);
     }
-
 
     // for item in _vector {
     //     print!("{} ", item);
     // }
     println!("\ndone");
-
 }
 
 use std::any::type_name;
@@ -258,12 +232,10 @@ fn main() {
         Red,
         Green,
         Blue,
-        Orange
+        Orange,
     }
 
-
     let asd = Color::Green;
-
 
     let x: i32 = 123;
     println!("{}", type_of(x));
@@ -272,18 +244,13 @@ fn main() {
         println!("yeeeeeeeeeeees")
     }
 
-
     println!("{}", Color::Red as i32);
-
-
 
     let mut age: Option<i32> = None;
     // processing
     age = Some(123);
 
-
     let mut mutable: Option<HashMap<i32, i32>> = None;
 
     mutable = Some(HashMap::from([(123, 123)]));
-
 }

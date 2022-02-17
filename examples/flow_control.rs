@@ -1,5 +1,3 @@
-
-
 #![allow(
     dead_code,
     unused_imports,
@@ -19,18 +17,11 @@ fn main() {
         println!("just something else")
     }
 
-
     // if with output capture
-    let old_enough: bool = if age > 21 {
-        true
-    } else {
-        false
-    };
-
+    let old_enough: bool = if age > 21 { true } else { false };
 
     // the best you can get close to ternary operator from C and C++
     let old_enough = if age > 21 { true } else { false };
-
 
     // let age: Option<i32> = Some(123123;
     match age {
@@ -54,7 +45,7 @@ fn main() {
     loop {
         println!("asd");
         if i == 10 {
-            break
+            break;
         }
         i += 1
     }
@@ -65,14 +56,8 @@ fn main() {
         i += 1
     }
 
-
-    for j in 0..100 {
-
-    }
+    for j in 0..100 {}
 
     let nums = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 190];
-    for num in nums {
-
-    }
-
+    for num in nums {}
 }

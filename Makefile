@@ -36,5 +36,12 @@ rspin:
 	@cargo run --example spinners --quiet --release
 
 
+mac:
+	@cargo run --example macros --quiet
+
+rmac:
+	@cargo run --example macros --quiet --release
+
+
 
 # .SILENT: flow | rflow | run | br | b | r | rr

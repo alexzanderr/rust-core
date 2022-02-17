@@ -1,5 +1,3 @@
-
-
 #![feature(thread_is_running)]
 #![allow(
     dead_code,
@@ -9,9 +7,8 @@
     unused_assignments
 )]
 
-
-use std::time::Duration;
 use std::thread::sleep;
+use std::time::Duration;
 
 use std::io::stdout;
 use std::io::Write;
@@ -22,8 +19,6 @@ use std::io::Write;
 // }
 
 use std::thread;
-
-
 
 fn main() {
     let frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
@@ -45,10 +40,9 @@ fn main() {
         // println!("thread 2 done");
     });
 
-
     while handle.is_running() {
         let frame = frames[_iter % 10];
-        print!("{frame} {message}\r", );
+        print!("{frame} {message}\r",);
         // print!("12345");
         // print!("{}", (8u8 as char));
         stdout().flush().expect("some error message");
