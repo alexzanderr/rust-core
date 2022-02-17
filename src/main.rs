@@ -3,8 +3,11 @@
     dead_code,
     unused_imports,
     unused_variables,
-    unused_macros
+    unused_macros,
+    unused_assignments
 )]
+
+
 
 
 extern crate fstrings;
@@ -175,14 +178,44 @@ fn read_number() -> u32 {
 
     return guess.trim().parse().expect("Please type a number!");
 }
+// use std::convert::From;
+// impl From<usize> for i32 {
+//     fn from(_usize: usize) -> Self {
+//         return _usize as i32;
+//     }
+// }
 
-fn main() {
+fn very_long_computation_function() {
     let mut _vector: Vec<i8> = vec![];
     let mut _counter: HashMap<i8, i32> = HashMap::new();
+    let mut _hashinside: HashMap<i8, HashMap<&str, f32>> = HashMap::new();
 
-    for i in 1..100000i32 {
+
+
+    let _size = 1000i32;
+    for i in 1.._size {
         let secret_number =
             rand::thread_rng().gen_range(1..101);
+
+
+        // dict = {
+        //     123: {
+        //         "frequency": 123,
+        //         "probability": 123 (frequency / len(dict))
+        //     }
+        // }
+
+        let modifier = _hashinside.entry(secret_number)
+            .or_insert(HashMap::from([("frequency", 0f32), ("probability", 0f32)]));
+
+        *modifier.get_mut(&"frequency").unwrap() += 1f32;
+
+        // let cap: i32 = i32::from(_hashinside.capacity());
+
+        *modifier.get_mut(&"probability").unwrap() =
+            *modifier.get("frequency").unwrap() / _size as f32;
+        // println!("{:?}", modifier.get_mut(&"frequency"));
+
 
         // match 50.cmp(&secret_number) {
         //     Ordering::Less => println!("Too small!"),
@@ -202,8 +235,8 @@ fn main() {
     }
 
 
-    for (k, v) in _counter.iter() {
-        println!("{}-{}", k, v);
+    for (k, v) in _hashinside.iter() {
+        println!("{}-{:?}", k, v);
     }
 
 
@@ -211,4 +244,46 @@ fn main() {
     //     print!("{} ", item);
     // }
     println!("\ndone");
+
+}
+
+use std::any::type_name;
+
+fn type_of<T>(_: T) -> &'static str {
+    type_name::<T>()
+}
+
+fn main() {
+    enum Color {
+        Red,
+        Green,
+        Blue,
+        Orange
+    }
+
+
+    let asd = Color::Green;
+
+
+    let x: i32 = 123;
+    println!("{}", type_of(x));
+
+    if let Color::Green = asd {
+        println!("yeeeeeeeeeeees")
+    }
+
+
+    println!("{}", Color::Red as i32);
+
+
+
+    let mut age: Option<i32> = None;
+    // processing
+    age = Some(123);
+
+
+    let mut mutable: Option<HashMap<i32, i32>> = None;
+
+    mutable = Some(HashMap::from([(123, 123)]));
+
 }

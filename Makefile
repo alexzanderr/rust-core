@@ -1,17 +1,40 @@
 
 
-
+# make
 run:
-	cargo run --quiet
+	@cargo run --quiet
 
+# make br
 br:
-	cargo build --release
+	@cargo build --release
 
+# make b
 b:
-	cargo build
+	@cargo build
 
+# make r
 r:
-	cargo run
+	@cargo run
 
+# make rr
 rr:
-	cargo run --release
+	@cargo run --release
+
+
+
+flow:
+	@cargo run --example flow_control --quiet
+
+rflow:
+	@cargo run --example flow_control --release --quiet
+
+
+spin:
+	@cargo run --example spinners --quiet
+	
+rspin:
+	@cargo run --example spinners --quiet --release
+
+
+
+# .SILENT: flow | rflow | run | br | b | r | rr
