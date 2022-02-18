@@ -52,7 +52,7 @@ fn get_current_date() -> Result<String, reqwest::Error> {
 }
 
 use std::fs;
-// /home/alexzander/Alexzander__/programming/rust/core/examples/types.rs
+// ~/Alexzander__/programming/rust/core/examples/types.rs
 fn main() {
     let number: u32 = "42".parse().expect("not a number man ...");
 
