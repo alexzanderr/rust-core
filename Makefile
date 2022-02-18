@@ -1,5 +1,14 @@
 
 
+info:
+	$(info Targets)
+	$(info -----------------------------------------------------------------------)
+	$(info assets      | generate default theme packs and syntax)
+	$(info - OTHER TARGETS -------------------------------------------------------)
+	$(info themes      | generate default theme pack)
+	$(info packs       | generate default syntax pack)
+	$(info syntest     | run syntax test summary)
+
 # make
 run:
 	@cargo run --quiet
@@ -44,4 +53,7 @@ rmac:
 
 
 
+
+
 # .SILENT: flow | rflow | run | br | b | r | rr
+

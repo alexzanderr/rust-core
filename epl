@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+argument=$1
+rustc --explain $argument | bat --pager=never --style=plain --color=always --italic-text=always --language rust

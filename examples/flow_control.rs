@@ -60,4 +60,6 @@ fn main() {
 
     let nums = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 190];
     for num in nums {}
+    
+    let number = if condition { 5 } else { 6 };
 }

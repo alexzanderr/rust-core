@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>synhtml-css-classes.rs</title>
+    <link rel="stylesheet" href="synhtml-css-classes.css">
+  </head>
+  <body>
+<pre class="code">
+<span class="source rust"><span class="storage type rust">let</span> <span class="storage modifier rust">mut</span> rs_html_generator <span class="keyword operator rust">=</span> <span class="meta path rust">ClassedHTMLGenerator<span class="punctuation accessor rust">::</span></span>new_with_class_style<span class="meta group rust"><span class="punctuation section group begin rust">(</span>sr_rs<span class="punctuation separator rust">,</span> <span class="keyword operator rust">&amp;</span>ss<span class="punctuation separator rust">,</span> <span class="meta path rust">ClassStyle<span class="punctuation accessor rust">::</span></span>Spaced</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span>
+<span class="keyword control rust">for</span> line <span class="keyword operator rust">in</span> <span class="meta path rust">LinesWithEndings<span class="punctuation accessor rust">::</span></span>from<span class="meta group rust"><span class="punctuation section group begin rust">(</span>code_rs</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span> <span class="meta block rust"><span class="punctuation section block begin rust">{</span>
+    rs_html_generator.<span class="support function rust">parse_html_for_line_which_includes_newline</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span>line</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span>
+</span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span>
+<span class="storage type rust">let</span> html_rs <span class="keyword operator rust">=</span> rs_html_generator.<span class="support function rust">finalize</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span>
+</span>
+</pre>
+<pre class="code">
+<span class="source c++"><span class="comment block c"><span class="punctuation definition comment c">/*</span> C++ source <span class="punctuation definition comment c">*/</span></span>
+<span class="meta preprocessor include c++"><span class="keyword control import include c++">#include</span> <span class="string quoted other lt-gt include c++"><span class="punctuation definition string begin c++">&lt;</span>iostream<span class="punctuation definition string end c++">&gt;</span></span>
+</span><span class="storage type c">int</span> <span class="meta function c++"><span class="entity name function c++">main</span></span><span class="meta function parameters c++"><span class="meta group c++"><span class="punctuation section group begin c++">(</span></span></span><span class="meta function parameters c++"><span class="meta group c++"><span class="punctuation section group end c++">)</span></span></span><span class="meta function c++"> </span><span class="meta function c++"><span class="meta block c++"><span class="punctuation section block begin c++">{</span></span></span><span class="meta function c++"><span class="meta block c++">
+    std<span class="punctuation accessor c++">::</span>cout <span class="keyword operator arithmetic c">&lt;&lt;</span> <span class="string quoted double c"><span class="punctuation definition string begin c">&quot;</span>Hello World!<span class="punctuation definition string end c">&quot;</span></span> <span class="keyword operator arithmetic c">&lt;&lt;</span> std<span class="punctuation accessor c++">::</span>endl<span class="punctuation terminator c++">;</span>
+</span></span><span class="meta function c++"><span class="meta block c++"><span class="punctuation section block end c++">}</span></span></span></span>
+</pre>
+  </body>
+</html>

@@ -2,6 +2,8 @@
 name = "core"
 version = "0.0.1"
 authors = [ "Your name <alexxander18360@gmail.com>" ]
+edition = "2021"
+
 
 [dependencies]
 # for f string formatting expression just like python
@@ -9,7 +11,7 @@ fstrings = "0.2.3"
 # for core/aesthetics.rs just like pyohn
 ansi_term = "0.12"
 time = "0.1"
-gtk = "*"
+# gtk = "*"
 # gdk = "*"
 # glib = "*"
 cairo-rs = "*"
@@ -17,6 +19,9 @@ libc = "0.2"
 console = "0.15.0"
 termion = "1.5.5"
 rand = "0.8.5"
+syntect = "4.6.0"
+indoc = "1.0.3"
+reqwest = "0.11.9"
 
 # [dependencies.gtk]
 # git = "https://github.com/rust-gnome/gtk.git"

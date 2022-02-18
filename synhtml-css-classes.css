@@ -1,0 +1,13 @@
+@import url("theme-light.css") (prefers-color-scheme: light);
+    @import url("theme-dark.css") (prefers-color-scheme: dark);
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: gray;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      body {
+        background-color: lightgray;
+      }
+    }
