@@ -18,6 +18,8 @@ extern crate libc;
 mod aesthetics;
 use aesthetics::*;
 
+mod algorithms;
+
 use console::Term;
 use std::hash::Hash;
 use std::io::stdin;

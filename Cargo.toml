@@ -1,9 +1,12 @@
 [package]
-name = "core"
+name = "rust_core"
 version = "0.0.1"
 authors = [ "Your name <alexxander18360@gmail.com>" ]
 edition = "2021"
 
+# this is for ignoring examples in cargo test
+# autoexamples = false
+# with this you cant run 'cargo run --example' anymore ..
 
 [dependencies]
 # for f string formatting expression just like python
@@ -22,6 +25,13 @@ rand = "0.8.5"
 syntect = "4.6.0"
 indoc = "1.0.3"
 reqwest = "0.11.9"
+backtrace = "0.3.64"
+color-backtrace = "0.5.1"
+unindent = "0.1.8"
+ctrlc = "3.2.1"
+subprocess = "0.2.8"
+rstest = "0.12.0"
+rstest_reuse = "0.1.3"
 
 # [dependencies.gtk]
 # git = "https://github.com/rust-gnome/gtk.git"
